@@ -18,8 +18,8 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   const PRIMARY_DARK = theme.palette.primary.dark;
 
   const logo = (
-    <Box sx={{ width: 100, height: 100, ...sx }}>
-      <img src={sblogo} alt="" width="100%" />
+    <Box sx={{ width: 40, height: 40, ...sx }}>
+      <img src={sblogo} alt="" width="200%" />
     </Box>
   );
 

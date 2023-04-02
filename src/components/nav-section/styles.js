@@ -4,13 +4,21 @@ import { ListItemIcon, ListItemButton } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
-export const StyledNavItem = styled((props) => <ListItemButton disableGutters {...props} />)(({ theme }) => ({
+export const StyledNavItem = styled((props) => (
+  <ListItemButton disableGutters {...props} />
+))(({ theme }) => ({
   ...theme.typography.body2,
-  height: 48,
+  margin: theme.spacing(0, 1.2),
+  padding: theme.spacing(0, 2),
+  height: 50,
   position: 'relative',
   textTransform: 'capitalize',
   color: theme.palette.text.secondary,
   borderRadius: theme.shape.borderRadius,
+  '&:hover': {
+    color: theme.palette.text.primary,
+    backgroundColor: theme.palette.background.neutral,
+  },
 }));
 
 export const StyledNavItemIcon = styled(ListItemIcon)({

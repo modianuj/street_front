@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import { NavLink as RouterLink } from 'react-router-dom';
 // @mui
 import { Box, List, ListItemText } from '@mui/material';
+import palette from '../../theme/palette';
+
 //
 import { StyledNavItem, StyledNavItemIcon } from './styles';
 
@@ -38,7 +40,7 @@ function NavItem({ item }) {
       to={path}
       sx={{
         '&.active': {
-          color: 'text.primary',
+          color: palette.primary.main,
           bgcolor: 'action.selected',
           fontWeight: 'fontWeightBold',
         },

@@ -5,13 +5,13 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 // @mui
 import {
-  Link,
   Stack,
   IconButton,
   InputAdornment,
   TextField,
   Checkbox,
   FormControlLabel,
+  FormHelperText,
 } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // components
@@ -56,13 +56,7 @@ export default function LoginForm() {
         password: formik.values.password,
       };
       dispatch(LoginAction(payload));
-      navigate('/dashboard', { replace: true });
-      // setMsgConfig({
-      //   alertOpen: true,
-      //   message: 'Welcome to ONCIO!',
-      //   severity: 'success',
-      //   autoHideDuration: 2000,
-      // });
+      navigate('/dashboard');
     },
   });
   return (
@@ -75,6 +69,11 @@ export default function LoginForm() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
+        {formik.touched.email && formik.errors.email && (
+          <FormHelperText className="error_message">
+            {formik.errors.email}
+          </FormHelperText>
+        )}
 
         <TextField
           name="password"
@@ -98,6 +97,11 @@ export default function LoginForm() {
             ),
           }}
         />
+        {formik.touched.password && formik.errors.password && (
+          <FormHelperText className="error_message">
+            {formik.errors.password}
+          </FormHelperText>
+        )}
       </Stack>
 
       <Stack
